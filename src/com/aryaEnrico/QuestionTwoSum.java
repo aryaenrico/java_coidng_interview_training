@@ -11,8 +11,8 @@ public class QuestionTwoSum {
         for (int i = 0; i < nums.length; i++) {
             numberToFind = target - nums[i];
             if (dictionary.get(numberToFind) != null) {
-                result[0] = i;
-                result[1] = dictionary.get(numberToFind);
+                result[0] = dictionary.get(numberToFind);
+                result[1] = i;
                 return result;
             }else{
                 dictionary.put(nums[i],i);

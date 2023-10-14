@@ -8,12 +8,30 @@ import java.util.Queue;
 public class ArrayGraph {
     static int[][] graph = {
             {0, 1, 1, 0, 0},
-            {1, 0, 1, 0, 0},
+            {1, 0, 0, 1, 0},
             {1, 0, 0, 0, 1},
             {0, 1, 0, 0, 1},
             {0, 0, 1, 1, 0}
     };
     static boolean[] marker = {false, false, false, false, false};
+    static List<Integer> resultDfs = new ArrayList<Integer>();
+
+    static void DFS(int start) {
+        List<Integer> adj = adjacentDfs(graph[start]);
+        if (!marker[start]) {
+            resultDfs.add(start);
+            marker[start] = true;
+        }
+       if(adj.size()>0){
+           for(int next:adj){
+               if(!marker[next]){
+                   resultDfs.add(next);
+                   marker[next] = true;
+                   DFS(next);
+               }
+           }
+       }
+    }
 
     static List<Integer> BFS(int start) {
         Queue<Integer> queue = new ArrayDeque<Integer>();
@@ -35,6 +53,16 @@ public class ArrayGraph {
     }
 
     static List<Integer> adjacent(int[] data) {
+        List<Integer> result = new ArrayList<Integer>();
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] != 0) {
+                result.add(i);
+            }
+        }
+        return result;
+    }
+
+    static List<Integer> adjacentDfs(int[] data) {
         List<Integer> result = new ArrayList<Integer>();
         for (int i = 0; i < data.length; i++) {
             if (data[i] != 0) {

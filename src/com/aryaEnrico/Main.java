@@ -12,10 +12,34 @@ public class Main {
 //    System.out.println(Arrays.toString(result));
 
 
-        List<Integer>data = ArrayGraph.BFS(1);
-        for(int i=0;i<data.size();i++){
-            System.out.println(data.get(i));
+        ArrayGraph.DFS(0);
+        System.out.println(ArrayGraph.resultDfs.size());
+        for(int data:ArrayGraph.resultDfs){
+            System.out.println(data);
         }
+
+//        Graph graphApp = new Graph();
+//        Node nodeA =  graphApp.createNode("A");
+//        Node nodeB =  graphApp.createNode("B");
+//        Node nodeC =  graphApp.createNode("C");
+//        nodeA.addedges("B");
+//        nodeA.addedges("C");
+//        nodeB.addedges("A");
+//        nodeC.addedges("A");
+//
+//        List<String> data = graphApp.BFS("C");
+//
+//
+//        for(String result:data){
+//            System.out.println(result);
+//        }
+//        System.out.println(data.size());
+//        graphApp.removeNode("C");
+//        System.out.println(graphApp.getNumOfNodes());
+
+
+
+
 
     }
 }

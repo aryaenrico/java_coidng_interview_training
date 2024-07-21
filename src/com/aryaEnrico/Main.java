@@ -10,13 +10,16 @@ public class Main {
 //	QuestionTwoSum questionTwoSum   = new QuestionTwoSum ();
 //    int[] result = questionTwoSum.findTarget(new int[]{1,3,7,9,2},5);
 //    System.out.println(Arrays.toString(result));
+        int[] paramData = new int[]{4,8,1,9,2};
+       QuestionContainerWater questionContainerWater = new QuestionContainerWater(paramData);
+       System.out.println(questionContainerWater.optimizeSolution());
 
 
-        ArrayGraph.DFS(2);
-        System.out.println(ArrayGraph.resultDfs.size());
-        for(int data:ArrayGraph.resultDfs){
-            System.out.println(data);
-        }
+//        ArrayGraph.DFS(2);
+//        System.out.println(ArrayGraph.resultDfs.size());
+//        for(int data:ArrayGraph.resultDfs){
+//            System.out.println(data);
+//        }
 
 //        Graph graphApp = new Graph();
 //        Node nodeA =  graphApp.createNode("A");

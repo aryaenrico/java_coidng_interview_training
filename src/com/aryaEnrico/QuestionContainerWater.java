@@ -24,4 +24,27 @@ public class QuestionContainerWater {
         }
         return maxArea;
     }
+
+    public int optimizeSolution() {
+        int pointerA = 0;
+        int maxArea = 0;
+        int height, width;
+        int area;
+        int pointerB = this.data.length-1;
+        while (pointerA < pointerB) {
+            height = Math.min(this.data[pointerA], this.data[pointerB]);
+            width = pointerB-pointerA;
+            area = width * height;
+            maxArea =Math.max(area,maxArea);
+            if (this.data[pointerB] < this.data[pointerA]) {
+                pointerB--;
+            } else {
+                pointerA++;
+            }
+        }
+        return maxArea;
+    }
+
+
 }
+

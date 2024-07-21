@@ -1,1 +1,1 @@
-# java_coidng_interview_training
+# java_coding_interview_training

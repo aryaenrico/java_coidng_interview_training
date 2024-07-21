@@ -15,22 +15,17 @@ public class ArrayGraph {
     };
     static boolean[] marker = {false, false, false, false, false};
     static List<Integer> resultDfs = new ArrayList<Integer>();
-
     static void DFS(int start) {
+
+        resultDfs.add(start);
+        marker[start] = true;
         List<Integer> adj = adjacentDfs(graph[start]);
-        if (!marker[start]) {
-            resultDfs.add(start);
-            marker[start] = true;
+
+        for (int next : adj) {
+            if (!marker[next]) {
+                DFS(next);
+            }
         }
-       if(adj.size()>0){
-           for(int next:adj){
-               if(!marker[next]){
-                   resultDfs.add(next);
-                   marker[next] = true;
-                   DFS(next);
-               }
-           }
-       }
     }
 
     static List<Integer> BFS(int start) {
